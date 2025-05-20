@@ -199,19 +199,18 @@ body {
     gap: 1rem;
 }
 
-.brand-icon {
+.brand-icon{
     width: 45px;
     height: 45px;
-    background: var(--primary-color);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.brand-icon i {
-    font-size: 1.8rem;
-    color: white;
+.brand-icon img {
+    width: 40px;
+    height: auto;
 }
 
 .brand-text {
