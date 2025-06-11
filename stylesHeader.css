@@ -171,8 +171,8 @@
 .brand-icon img {
     width: 50px;
     height: 50px;
-    height: auto;
-    display: block;          /* Asegura que la imagen ocupe el espacio del contenedor */
+    object-fit: cover;
+    
 }
 
 .brand-text {
