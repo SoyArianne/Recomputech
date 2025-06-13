@@ -14,6 +14,25 @@
     margin-bottom: 1rem;
 }
 
+/* Logo en el footer */
+.footer-brand .logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 0%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-right: 0.75rem;
+    vertical-align: middle;
+}
+
+.footer-brand span {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    vertical-align: middle;
+}
+
 .footer-brand p {
     color: rgba(255, 255, 255, 0.8);
 }
