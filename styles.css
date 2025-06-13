@@ -145,7 +145,6 @@ body {
     position: relative;
     padding: 2rem;
 }
-
 .hero-image {
     border-radius: 20px;
     box-shadow: var(--shadow-lg);
@@ -155,7 +154,19 @@ body {
 .hero-image:hover {
     transform: translateY(-10px);
 }
+/* Dark Mode for Hero Section */
+body.dark-mode .hero-section {
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-color) 100%);
+}
 
+body.dark-mode .hero-overlay {
+    background: url('assets/pattern-dark.png') repeat; /* Cambia el patrón si tienes uno para modo oscuro */
+    opacity: 0.2; /* Ajusta la opacidad para modo oscuro */
+}
+
+body.dark-mode .hero-image {
+    box-shadow: var(--shadow-md); /* Ajusta el sombreado para modo oscuro */
+}
 .floating-card {
     position: absolute;
     background: var(--card-bg);
