@@ -180,3 +180,10 @@ body.dark-mode .navbar-nav .nav-link {
 body.dark-mode .navbar-nav .nav-link:hover {
     color: var(--brand-color);
 }
+
+/* Limita el tamaño del logo en el header */
+.logo {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
