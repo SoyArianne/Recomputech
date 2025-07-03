@@ -25,7 +25,7 @@ async function loadComponent(elementId, componentPath) {
 
 // Cargar componentes cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
-    // Cargar header y footer (usando rutas relativas)
-    loadComponent('header-component', 'components/header.html');
-    loadComponent('footer-component', 'components/footer.html');
+    // Para prueba: rutas relativas para /pages
+    loadComponent('header-component', '../components/header.html');
+    loadComponent('footer-component', '../components/footer.html');
 }); 
