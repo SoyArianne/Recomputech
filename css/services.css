@@ -1,0 +1,107 @@
+/* Services Page Specific Styles */
+
+#services {
+    background: var(--bg-light);
+}
+
+.service-card {
+    background: var(--card-bg);
+    border-radius: 18px;
+    box-shadow: var(--shadow-md);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.service-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+    background: var(--primary-color);
+    color: #fff;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 4px 16px rgba(37,99,235,0.08);
+    transition: background 0.3s, color 0.3s;
+}
+
+.service-card:hover .service-icon {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    color: var(--primary-color);
+}
+
+.service-card p {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+/* Newsletter Section (Call to Action) */
+.newsletter-section {
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 18px;
+    margin: 3rem 0 0 0;
+}
+
+.newsletter-content h2 {
+    color: #fff;
+    font-weight: 700;
+}
+
+.newsletter-content p {
+    color: #e0e7ef;
+}
+
+.newsletter-content .btn-primary {
+    background: #fff;
+    color: var(--primary-color);
+    border: none;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+
+.newsletter-content .btn-primary:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .service-card {
+        min-height: 260px;
+        padding: 1.2rem 0.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-card {
+        min-height: 180px;
+        padding: 1rem 0.5rem;
+    }
+    .newsletter-section {
+        border-radius: 10px;
+        margin: 2rem 0 0 0;
+    }
+}
+
