@@ -34,17 +34,17 @@
                     <h1 class="display-4 fw-bold mb-4">Give Technology a Second Life</h1>
                     <p class="lead mb-4">Discover our selection of refurbished tech devices and professional technical services. Contribute to the environment while saving money.</p>
                     <div class="d-flex gap-3">
-                        <a href="#products" class="btn  btn-lg">
+                        <a href="#products" class="btn btn-lg hero-btn-primary">
                             <i class="fas fa-laptop me-2"></i>Explore Products
                         </a>
-                        <a href="#technicians" class="btn btn-outline- btn-lg">
+                        <a href="#technicians" class="btn btn-lg hero-btn-outline">
                             <i class="fas fa-tools me-2"></i>Find Technicians
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
+                <div class="col-lg-6">
                     <div class="hero-image-container">
-                        <img src="/assets/logos/portrait-female-working.jpg" alt="Sustainable Technology" class="img-fluid hero-image">
+                        <img src="/assets/logos/portrait-female-working.jpg" alt="Sustainable Technology" class="img-fluid hero-image animate-slide-in">
                         <div class="floating-card card-1">
                             <i class="fas fa-leaf text-success"></i>
                             <span>100% Sustainable</span>
@@ -587,5 +587,11 @@
     <script src="js/theme.js"></script>
     <script src="js/components.js"></script>
     <script src="main.js"></script>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        const heroImg = document.querySelector('.hero-image');
+        heroImg.classList.add('animate-slide-in');
+      });
+    </script>
 </body>
 </html>

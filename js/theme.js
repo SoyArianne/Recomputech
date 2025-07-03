@@ -7,9 +7,11 @@ function toggleTheme() {
     if (isDark) {
         body.classList.remove('dark-mode');
         body.classList.add('light-mode');
+        body.setAttribute('data-theme', 'light');
     } else {
         body.classList.remove('light-mode');
         body.classList.add('dark-mode');
+        body.setAttribute('data-theme', 'dark');
     }
     
     // Actualizar el ícono
@@ -32,12 +34,14 @@ function initializeTheme() {
     if (savedTheme === 'dark') {
         body.classList.remove('light-mode');
         body.classList.add('dark-mode');
+        body.setAttribute('data-theme', 'dark');
         if (themeIcon) {
             themeIcon.className = 'fas fa-sun';
         }
     } else {
         body.classList.remove('dark-mode');
         body.classList.add('light-mode');
+        body.setAttribute('data-theme', 'light');
         if (themeIcon) {
             themeIcon.className = 'fas fa-moon';
         }
