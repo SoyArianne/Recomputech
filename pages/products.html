@@ -23,14 +23,46 @@
 
 <body class="light-mode">
     <div id="header-component"></div>
-    <main class="container py-5">
+    <!-- Categorías de productos -->
+    <section class="product-categories py-3 pt-8">
+      <div class="container">
+        <ul class="nav nav-pills justify-content-center gap-2" id="category-filter">
+          <li class="nav-item">
+            <a class="nav-link active d-flex align-items-center gap-2" href="#" data-category="laptop">
+              <i class="fas fa-laptop"></i> Laptops
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" href="#" data-category="smartphone">
+              <i class="fas fa-mobile-alt"></i> Smartphones
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" href="#" data-category="pc">
+              <i class="fas fa-desktop"></i> PC
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" href="#" data-category="tablet">
+              <i class="fas fa-tablet-alt"></i> Tablets
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center gap-2" href="#" data-category="audifonos">
+              <i class="fas fa-headphones"></i> Audífonos
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <main class="container py-5 main-products">
       <section class="products-section">
         <div class="row" id="products-list">
           <!-- Product Cards -->
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal1" style="cursor:pointer;">
               <div class="product-image">
-                <img src="../assets/laptop.jpg" alt="Laptop" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
+                <img src="../assets/images/laptop.avif" alt="Laptop" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
               </div>
               <div class="product-info">
                 <h5>Refurbished Gaming Laptop</h5>
@@ -53,7 +85,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal2" style="cursor:pointer;">
               <div class="product-image">
-                <img src="../assets/pc.jpg" alt="PC" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
+                <img src="../assets/images/pc.jpg" alt="PC" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
               </div>
               <div class="product-info">
                 <h5>Refurbished Gaming PC</h5>
@@ -76,7 +108,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal3" style="cursor:pointer;">
               <div class="product-image">
-                <img src="../assets/tablet.jpg" alt="Tablet" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
+                <img src="../assets/images/tablet.png" alt="Tablet" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
               </div>
               <div class="product-info">
                 <h5>Refurbished Pro Tablet</h5>
