@@ -467,3 +467,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('product-prev-btn').addEventListener('click', handlePrev);
   document.getElementById('product-cards-container').addEventListener('click', handleProductClick);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const sendIcon = document.getElementById('newsletter-send');
+  if (sendIcon) {
+    sendIcon.addEventListener('click', function() {
+      alert('¡Suscripción exitosa!');
+    });
+  }
+});

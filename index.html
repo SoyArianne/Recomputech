@@ -23,7 +23,6 @@
 
     <div id="header-component"></div>
 
-    <!-- Hero Section -->
      <!-- Hero Section -->
      <section class="hero-section">
         <div class="hero-overlay"></div>
@@ -162,7 +161,7 @@
     <!-- About Us Section -->
     <section id="about" class="py-5">
         <div class="container">
-            <div class="row align-items-center flex-lg-nowrap">
+            <div class="row align-items-center flex-lg-nowrap about-section-row">
                 <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
                     <div class="about-image-container position-relative">
                         <img src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg" alt="About Us" class="img-fluid rounded-4 shadow-lg about-main-img">
@@ -176,40 +175,19 @@
                     <span class="section-badge mb-2">About Us</span>
                     <h2 class="section-title mb-3">Our Story</h2>
                     <p class="lead mb-4">We believe in a future where technology and sustainability go hand in hand. Our mission is to reduce the environmental impact of the tech industry while offering high-quality products at affordable prices.</p>
-                    <div class="row g-3 mb-4 about-feature-cards">
-                        <div class="col-md-4 col-12">
-                            <div class="feature-card d-flex flex-row align-items-center p-3 h-100" data-aos="fade-up" data-aos-delay="100">
-                                <div class="feature-icon me-3">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <div>
-                                    <div class="feature-title">Certified</div>
-                                    <div class="feature-desc small">Guaranteed products</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-12">
-                            <div class="feature-card d-flex flex-row align-items-center p-3 h-100" data-aos="fade-up" data-aos-delay="200">
-                                <div class="feature-icon me-3">
-                                    <i class="fas fa-tools"></i>
-                                </div>
-                                <div>
-                                    <div class="feature-title">Pro Service</div>
-                                    <div class="feature-desc small">Technical experts</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-12">
-                            <div class="feature-card d-flex flex-row align-items-center p-3 h-100" data-aos="fade-up" data-aos-delay="300">
-                                <div class="feature-icon me-3">
-                                    <i class="fas fa-leaf"></i>
-                                </div>
-                                <div>
-                                    <div class="feature-title">Eco Commitment</div>
-                                    <div class="feature-desc small">Sustainability</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="about-features-grid mb-4">
+                      <div class="about-feature-card">
+                        <div class="about-feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="about-feature-desc">Guaranteed products</div>
+                      </div>
+                      <div class="about-feature-card">
+                        <div class="about-feature-icon"><i class="fas fa-tools"></i></div>
+                        <div class="about-feature-desc">Technical experts</div>
+                      </div>
+                      <div class="about-feature-card">
+                        <div class="about-feature-icon"><i class="fas fa-leaf"></i></div>
+                        <div class="about-feature-desc">Sustainability</div>
+                      </div>
                     </div>
                     <a href="#contact" class="btn btn-primary btn-lg px-4 animate-fade-in" data-aos="zoom-in" data-aos-delay="400">
                         <i class="fas fa-envelope me-2"></i>Contact Us
@@ -272,11 +250,11 @@
                     View All Technicians <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 technicians-row">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="tech-card">
                         <div class="tech-header">
-                            <div class="tech-avatar">CR</div>
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David Martez" class="tech-avatar-img me-3">
                             <div class="tech-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -313,7 +291,7 @@
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="tech-card">
                         <div class="tech-header">
-                            <div class="tech-avatar">AM</div>
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana Martinez" class="tech-avatar-img me-3">
                             <div class="tech-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -350,7 +328,7 @@
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="tech-card">
                         <div class="tech-header">
-                            <div class="tech-avatar">JP</div>
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="John Perez" class="tech-avatar-img me-3">
                             <div class="tech-rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -395,12 +373,12 @@
                     <div class="newsletter-content">
                         <h2 class="mb-4">Stay Informed</h2>
                         <p class="mb-4">Subscribe to our newsletter to receive the latest offers and news about sustainable technology</p>
-                        <form class="newsletter-form">
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Your email address">
-                                <button type="submit" class="btn btn-light">
+                        <form class="newsletter-form" onsubmit="return false;">
+                            <div class="newsletter-input-wrapper position-relative">
+                                <input type="email" class="form-control" placeholder="Your email address" id="newsletter-email">
+                                <span id="newsletter-send" class="newsletter-send-icon-inside">
                                     <i class="fas fa-paper-plane"></i>
-                                </button>
+                                </span>
                             </div>
                         </form>
                     </div>
@@ -410,79 +388,67 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5 contact-section">
         <div class="container">
-            <div class="section-header text-center mb-5" data-aos="fade-up">
-                <span class="section-badge">Contact</span>
-                <h2 class="section-title">Have Questions?</h2>
-                <p class="section-subtitle">We're here to help</p>
+            <div class="section-header text-center mb-5">
+              <span class="section-badge">Contact Us</span>
+              <h2 class="section-title">Send us a message</h2>
             </div>
-            <div class="row">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="contact-form-wrapper">
-                        <form class="contact-form">
-                            <div class="form-group mb-3">
-                                <label class="form-label">Name</label>
+            <div class="row g-5 align-items-start">
+                <!-- Contact Info -->
+                <div class="col-lg-5">
+                    <div class="contact-info-card mb-4">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h5>Location</h5>
+                            <p>123 Main Street, City</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card mb-4">
+                        <div class="info-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h5>Phone</h5>
+                            <p>(123) 456-7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-card mb-4">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h5>Email</h5>
+                            <p>info@example.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-socials mt-4">
+                        <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="contact-form-wrapper p-4 shadow rounded-4 bg-white">
+                        <form>
+                            <div class="mb-3">
+                                <label>Name</label>
                                 <input type="text" class="form-control" placeholder="Your name">
                             </div>
-                            <div class="form-group mb-3">
-                                <label class="form-label">Email</label>
+                            <div class="mb-3">
+                                <label>Email</label>
                                 <input type="email" class="form-control" placeholder="Your email">
                             </div>
-                            <div class="form-group mb-3">
-                                <label class="form-label">Subject</label>
-                                <select class="form-select">
-                                    <option>General Inquiry</option>
-                                    <option>Technical Service</option>
-                                    <option>Product Sales</option>
-                                    <option>Other</option>
-                                </select>
+                            <div class="mb-3">
+                                <label>Subject</label>
+                                <input type="text" class="form-control" placeholder="Subject">
                             </div>
-                            <div class="form-group mb-3">
-                                <label class="form-label">Message</label>
-                                <textarea class="form-control" rows="5" placeholder="Your message"></textarea>
+                            <div class="mb-3">
+                                <label>Message</label>
+                                <textarea class="form-control" rows="4" placeholder="Your message"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
                                 <i class="fas fa-paper-plane me-2"></i>Send Message
                             </button>
                         </form>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="contact-info-wrapper">
-                        <div class="contact-info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="info-content">
-                                <h5>Location</h5>
-                                <p>123 Main Street, City</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="info-content">
-                                <h5>Phone</h5>
-                                <p>(123) 456-7890</p>
-                            </div>
-                        </div>
-                        <div class="contact-info-card">
-                            <div class="info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="info-content">
-                                <h5>Email</h5>
-                                <p>info@example.com</p>
-                            </div>
-                        </div>
-                        <div class="social-links mt-4">
-                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        </div>
                     </div>
                 </div>
             </div>
