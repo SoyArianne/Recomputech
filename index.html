@@ -113,7 +113,7 @@
             </div>
             
             <div class="products-filter mb-5" data-aos="fade-up">
-                <div class="filter-categories">
+                <div class="filter-categories d-flex flex-wrap flex-md-nowrap gap-2 overflow-auto pb-2 justify-content-center" style="scrollbar-width: thin;">
                     <button class="btn btn-outline-primary active" data-filter="all">
                         <i class="fas fa-border-all"></i> All
                     </button>
@@ -133,7 +133,7 @@
                         <i class="fas fa-headphones"></i> Accessories
                     </button>
                 </div>
-                <div class="filter-actions">
+                <div class="d-flex flex-row flex-wrap justify-content-center align-items-center gap-3 mt-3 filter-actions-bar">
                     <div class="filter-sort">
                         <select class="form-select">
                             <option>Most Recent</option>
@@ -142,126 +142,19 @@
                             <option>Most Rated</option>
                         </select>
                     </div>
-                    <a href="#" class="btn btn-primary">
-                        View All <i class="fas fa-arrow-right ms-2"></i>
+                    <a href="pages/products.html" class="btn btn-primary">
+                        <i class="fas fa-arrow-right"></i> View All
                     </a>
                 </div>
             </div>
 
             <div class="swiper product-slider" data-aos="fade-up">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <i class="fas fa-laptop fa-3x text-primary"></i>
-                                <div class="product-overlay">
-                                    <button class="btn btn-light">View Details</button>
-                                    <button class="btn btn-primary">Add to Cart</button>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h5>Refurbished Gaming Laptop</h5>
-                                <p class="product-description">High-end refurbished gaming laptop with warranty.</p>
-                                <div class="product-price">
-                                    <span class="price">$899.99</span>
-                                    <span class="original-price">$1299.99</span>
-                                </div>
-                                <div class="product-rating">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <span>(4.8)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <i class="fas fa-desktop fa-3x text-primary"></i>
-                                <div class="product-overlay">
-                                    <button class="btn btn-light">View Details</button>
-                                    <button class="btn btn-primary">Add to Cart</button>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h5>Refurbished Gaming PC</h5>
-                                <p class="product-description">High-performance gaming PC with premium components.</p>
-                                <div class="product-price">
-                                    <span class="price">$1299.99</span>
-                                    <span class="original-price">$1899.99</span>
-                                </div>
-                                <div class="product-rating">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star-half-alt text-warning"></i>
-                                    <span>(4.5)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <i class="fas fa-tablet-alt fa-3x text-primary"></i>
-                                <div class="product-overlay">
-                                    <button class="btn btn-light">View Details</button>
-                                    <button class="btn btn-primary">Add to Cart</button>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h5>Refurbished Pro Tablet</h5>
-                                <p class="product-description">Professional tablet with high-resolution display.</p>
-                                <div class="product-price">
-                                    <span class="price">$499.99</span>
-                                    <span class="original-price">$799.99</span>
-                                </div>
-                                <div class="product-rating">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <span>(5.0)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-card">
-                            <div class="product-image">
-                                <i class="fas fa-mobile-alt fa-3x text-primary"></i>
-                                <div class="product-overlay">
-                                    <button class="btn btn-light">View Details</button>
-                                    <button class="btn btn-primary">Add to Cart</button>
-                                </div>
-                            </div>
-                            <div class="product-info">
-                                <h5>Refurbished Smartphone</h5>
-                                <p class="product-description">Latest generation refurbished smartphone.</p>
-                                <div class="product-price">
-                                    <span class="price">$699.99</span>
-                                    <span class="original-price">$999.99</span>
-                                </div>
-                                <div class="product-rating">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <span>(5.0)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div id="product-cards-container" class="swiper-wrapper">
+                    <!-- Las tarjetas de productos se renderizarán aquí dinámicamente -->
                 </div>
                 <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next" id="product-next-btn"></div>
+                <div class="swiper-button-prev" id="product-prev-btn"></div>
             </div>
         </div>
     </section>
@@ -269,37 +162,56 @@
     <!-- About Us Section -->
     <section id="about" class="py-5">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="about-image-container">
-                        <img src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg" alt="About Us" class="img-fluid rounded-3">
-                        <div class="experience-badge">
+            <div class="row align-items-center flex-lg-nowrap">
+                <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="about-image-container position-relative">
+                        <img src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg" alt="About Us" class="img-fluid rounded-4 shadow-lg about-main-img">
+                        <div class="experience-badge shadow-lg animate-bounce" data-aos="zoom-in" data-aos-delay="300">
                             <span class="number">10+</span>
                             <span class="text">Years of Experience</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="section-header mb-4">
-                        <span class="section-badge">About Us</span>
-                        <h2 class="section-title">Our Story</h2>
-                    </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <span class="section-badge mb-2">About Us</span>
+                    <h2 class="section-title mb-3">Our Story</h2>
                     <p class="lead mb-4">We believe in a future where technology and sustainability go hand in hand. Our mission is to reduce the environmental impact of the tech industry while offering high-quality products at affordable prices.</p>
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle text-success"></i>
-                            <span>Certified and guaranteed products</span>
+                    <div class="row g-3 mb-4 about-feature-cards">
+                        <div class="col-md-4 col-12">
+                            <div class="feature-card d-flex flex-row align-items-center p-3 h-100" data-aos="fade-up" data-aos-delay="100">
+                                <div class="feature-icon me-3">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div>
+                                    <div class="feature-title">Certified</div>
+                                    <div class="feature-desc small">Guaranteed products</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle text-success"></i>
-                            <span>Professional technical service</span>
+                        <div class="col-md-4 col-12">
+                            <div class="feature-card d-flex flex-row align-items-center p-3 h-100" data-aos="fade-up" data-aos-delay="200">
+                                <div class="feature-icon me-3">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div>
+                                    <div class="feature-title">Pro Service</div>
+                                    <div class="feature-desc small">Technical experts</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="feature-item">
-                            <i class="fas fa-check-circle text-success"></i>
-                            <span>Environmental commitment</span>
+                        <div class="col-md-4 col-12">
+                            <div class="feature-card d-flex flex-row align-items-center p-3 h-100" data-aos="fade-up" data-aos-delay="300">
+                                <div class="feature-icon me-3">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div>
+                                    <div class="feature-title">Eco Commitment</div>
+                                    <div class="feature-desc small">Sustainability</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <a href="#contact" class="btn btn-primary mt-4">
+                    <a href="#contact" class="btn btn-primary btn-lg px-4 animate-fade-in" data-aos="zoom-in" data-aos-delay="400">
                         <i class="fas fa-envelope me-2"></i>Contact Us
                     </a>
                 </div>
