@@ -204,6 +204,51 @@ document.querySelectorAll('.stats-section').forEach(section => {
     statsObserver.observe(section);
 });
 
+// Animated stats counter
+function animateStats() {
+  const stats = document.querySelectorAll('.stat-animate');
+  stats.forEach(stat => {
+    const target = parseFloat(stat.getAttribute('data-target'));
+    const isDecimal = stat.textContent.includes('.') || String(target).includes('.');
+    let start = 0;
+    let suffix = '';
+    if (stat.textContent.includes('+')) suffix = '+';
+    if (stat.textContent.includes('/')) suffix = '/5';
+    const duration = 1500;
+    const startTime = performance.now();
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      let progress = Math.min(elapsed / duration, 1);
+      let value = isDecimal ? (progress * target).toFixed(1) : Math.floor(progress * target);
+      stat.textContent = value + suffix;
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        stat.textContent = target + suffix;
+      }
+    }
+    requestAnimationFrame(update);
+  });
+}
+
+// Only animate once when stats section is visible
+let statsAnimated = false;
+function handleStatsAnimation() {
+  const statsSection = document.querySelector('.stats-section');
+  if (!statsSection) return;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !statsAnimated) {
+        animateStats();
+        statsAnimated = true;
+      }
+    });
+  }, { threshold: 0.4 });
+  observer.observe(statsSection);
+}
+
+document.addEventListener('DOMContentLoaded', handleStatsAnimation);
+
 // Initialize Swiper
 const productSwiper = new Swiper('.product-slider', {
     slidesPerView: 3,
