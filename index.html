@@ -391,12 +391,13 @@
     <section id="contact" class="py-5 contact-section">
         <div class="container">
             <div class="section-header text-center mb-5">
-              <span class="section-badge">Contact Us</span>
-              <h2 class="section-title">Send us a message</h2>
+                <span class="section-badge">Contact Us</span>
+                <h2 class="section-title">Send us a message</h2>
+                <p class="section-subtitle">We're here to help you with any questions or requests</p>
             </div>
             <div class="row g-5 align-items-start">
                 <!-- Contact Info -->
-                <div class="col-lg-5">
+                <div class="col-lg-5" data-aos="fade-right">
                     <div class="contact-info-card mb-4">
                         <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
@@ -419,33 +420,38 @@
                         </div>
                     </div>
                     <div class="contact-socials mt-4">
-                        <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <!-- Contact Form -->
-                <div class="col-lg-7">
-                    <div class="contact-form-wrapper p-4 shadow rounded-4 bg-white">
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form-wrapper p-4 shadow rounded-4 bg-white dark-bg">
                         <form>
                             <div class="mb-3">
-                                <label>Name</label>
+                                <label class="form-label">Name</label>
                                 <input type="text" class="form-control" placeholder="Your name">
                             </div>
                             <div class="mb-3">
-                                <label>Email</label>
+                                <label class="form-label">Email</label>
                                 <input type="email" class="form-control" placeholder="Your email">
                             </div>
                             <div class="mb-3">
-                                <label>Subject</label>
-                                <input type="text" class="form-control" placeholder="Subject">
+                                <label class="form-label">Subject</label>
+                                <select class="form-select">
+                                    <option>General Inquiry</option>
+                                    <option>Technical Service</option>
+                                    <option>Product Sales</option>
+                                    <option>Other</option>
+                                </select>
                             </div>
                             <div class="mb-3">
-                                <label>Message</label>
+                                <label class="form-label">Message</label>
                                 <textarea class="form-control" rows="4" placeholder="Your message"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                            <button type="submit" class="btn btn-primary btn-lg w-100 send-btn">
                                 <i class="fas fa-paper-plane me-2"></i>Send Message
                             </button>
                         </form>
