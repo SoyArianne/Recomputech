@@ -13,21 +13,23 @@ const body = document.body;
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
     body.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+    if (themeToggle) updateThemeIcon(savedTheme);
 }
 
-themeToggle.addEventListener('click', () => {
-    const currentTheme = body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeIcon(newTheme);
-});
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    });
+}
 
 function updateThemeIcon(theme) {
+    if (!themeToggle) return;
     const icon = themeToggle.querySelector('i');
-    icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+    if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 }
 
 // Navbar Scroll Effect
@@ -70,41 +72,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Search Box Animation
 const searchBox = document.querySelector('.search-box input');
-searchBox.addEventListener('focus', () => {
-    searchBox.parentElement.classList.add('focused');
-});
-
-searchBox.addEventListener('blur', () => {
-    searchBox.parentElement.classList.remove('focused');
-});
+if (searchBox) {
+    searchBox.addEventListener('focus', () => {
+        searchBox.parentElement.classList.add('focused');
+    });
+    searchBox.addEventListener('blur', () => {
+        searchBox.parentElement.classList.remove('focused');
+    });
+}
 
 // Newsletter Form Submission
 const newsletterForm = document.querySelector('.newsletter-section form');
-newsletterForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const email = newsletterForm.querySelector('input[type="email"]').value;
-    
-    // Here you would typically send the email to your backend
-    alert('¡Gracias por suscribirte! Te mantendremos informado.');
-    newsletterForm.reset();
-});
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('input[type="email"]').value;
+        alert('¡Gracias por suscribirte! Te mantendremos informado.');
+        newsletterForm.reset();
+    });
+}
 
 // Contact Form Submission
 const contactForm = document.querySelector('#contacto form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Here you would typically send the form data to your backend
-    alert('¡Mensaje enviado! Nos pondremos en contacto contigo pronto.');
-    contactForm.reset();
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('¡Mensaje enviado! Nos pondremos en contacto contigo pronto.');
+        contactForm.reset();
+    });
+}
 
 // Product Card Hover Effect
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-10px)';
     });
-    
     card.addEventListener('mouseleave', () => {
         card.style.transform = 'translateY(0)';
     });
@@ -128,24 +130,22 @@ document.querySelectorAll('img').forEach(img => {
 
 // Intersection Observer for Fade-in Elements
 const fadeElements = document.querySelectorAll('.fade-in');
-const fadeOptions = {
-    threshold: 0.5
-};
-
-const fadeOnScroll = new IntersectionObserver((entries, fadeOnScroll) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            entry.target.classList.add('appear');
-            fadeOnScroll.unobserve(entry.target);
-        }
+if (fadeElements.length > 0) {
+    const fadeOptions = { threshold: 0.5 };
+    const fadeOnScroll = new IntersectionObserver((entries, fadeOnScroll) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('appear');
+                fadeOnScroll.unobserve(entry.target);
+            }
+        });
+    }, fadeOptions);
+    fadeElements.forEach(element => {
+        fadeOnScroll.observe(element);
     });
-}, fadeOptions);
-
-fadeElements.forEach(element => {
-    fadeOnScroll.observe(element);
-});
+}
 
 // Add to Cart Animation
 function addToCartAnimation(button) {
@@ -161,9 +161,11 @@ function addToCartAnimation(button) {
 
 // Initialize tooltips
 const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-});
+if (tooltipTriggerList.length > 0 && window.bootstrap && window.bootstrap.Tooltip) {
+    tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+}
 
 // Statistics Counter
 function animateCounter(element) {
@@ -171,7 +173,6 @@ function animateCounter(element) {
     const duration = 2000; // 2 seconds
     const step = target / (duration / 16); // 60fps
     let current = 0;
-
     const updateCounter = () => {
         current += step;
         if (current < target) {
@@ -181,28 +182,27 @@ function animateCounter(element) {
             element.textContent = target + (element.textContent.includes('+') ? '+' : '');
         }
     };
-
     updateCounter();
 }
 
 // Intersection Observer for Statistics
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const counters = entry.target.querySelectorAll('.stat-number');
-            counters.forEach(counter => {
-                animateCounter(counter);
-            });
-            statsObserver.unobserve(entry.target);
-        }
+const statsSections = document.querySelectorAll('.stats-section');
+if (statsSections.length > 0) {
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counters = entry.target.querySelectorAll('.stat-number');
+                counters.forEach(counter => {
+                    animateCounter(counter);
+                });
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    statsSections.forEach(section => {
+        statsObserver.observe(section);
     });
-}, {
-    threshold: 0.5
-});
-
-document.querySelectorAll('.stats-section').forEach(section => {
-    statsObserver.observe(section);
-});
+}
 
 // Animated stats counter
 function animateStats() {
@@ -277,4 +277,247 @@ const productSwiper = new Swiper('.product-slider', {
             slidesPerView: 3,
         }
     }
+});
+
+// --- Productos de ejemplo ---
+const products = [
+  {
+    id: 1,
+    name: 'Refurbished Gaming Laptop',
+    description: 'High-end refurbished gaming laptop with warranty.',
+    price: 899.99,
+    originalPrice: 1299.99,
+    rating: 4.8,
+    category: 'laptops',
+    image: 'assets/images/gaming laptop.jpg',
+  },
+  {
+    id: 2,
+    name: 'Refurbished Gaming PC',
+    description: 'High-performance gaming PC with premium components.',
+    price: 1299.99,
+    originalPrice: 1899.99,
+    rating: 4.5,
+    category: 'desktops',
+    image: 'assets/images/gaming pc.jpg',
+  },
+  {
+    id: 3,
+    name: 'Refurbished Pro Tablet',
+    description: 'Professional tablet with high-resolution display.',
+    price: 499.99,
+    originalPrice: 799.99,
+    rating: 5.0,
+    category: 'tablets',
+    image: 'assets/images/pro tablet.jpg',
+  },
+  {
+    id: 4,
+    name: 'Refurbished Smartphone',
+    description: 'Latest generation refurbished smartphone.',
+    price: 699.99,
+    originalPrice: 999.99,
+    rating: 5.0,
+    category: 'phones',
+    image: 'assets/images/tablet.png',
+  },
+  {
+    id: 5,
+    name: 'Laptop Standard',
+    description: 'Reliable refurbished laptop for everyday use.',
+    price: 499.99,
+    originalPrice: 799.99,
+    rating: 4.2,
+    category: 'laptops',
+    image: 'assets/images/laptop.avif',
+  },
+  {
+    id: 6,
+    name: 'PC Standard',
+    description: 'Affordable refurbished PC for home and office.',
+    price: 399.99,
+    originalPrice: 699.99,
+    rating: 4.0,
+    category: 'desktops',
+    image: 'assets/images/pc.jpg',
+  },
+  {
+    id: 7,
+    name: 'Tablet Basic',
+    description: 'Entry-level tablet for browsing and media.',
+    price: 199.99,
+    originalPrice: 399.99,
+    rating: 4.1,
+    category: 'tablets',
+    image: 'assets/images/tablet.png',
+  },
+  {
+    id: 8,
+    name: 'Accessory Headphones',
+    description: 'High-quality refurbished headphones.',
+    price: 59.99,
+    originalPrice: 99.99,
+    rating: 4.6,
+    category: 'accessories',
+    image: 'assets/images/logo-recomputech.png',
+  },
+  {
+    id: 9,
+    name: 'Accessory Mouse',
+    description: 'Wireless mouse, refurbished and tested.',
+    price: 29.99,
+    originalPrice: 49.99,
+    rating: 4.3,
+    category: 'accessories',
+    image: 'assets/images/logo-recomputech.png',
+  },
+  {
+    id: 10,
+    name: 'Smartphone Basic',
+    description: 'Affordable smartphone for daily tasks.',
+    price: 299.99,
+    originalPrice: 499.99,
+    rating: 4.0,
+    category: 'phones',
+    image: 'assets/images/tablet.png',
+  },
+];
+
+const categories = [
+  { key: 'all', label: 'All' },
+  { key: 'laptops', label: 'Laptops' },
+  { key: 'desktops', label: 'PCs' },
+  { key: 'phones', label: 'Smartphones' },
+  { key: 'tablets', label: 'Tablets' },
+  { key: 'accessories', label: 'Accessories' },
+];
+
+let currentCategory = 'all';
+let currentPage = 0;
+const PRODUCTS_PER_PAGE = 3;
+
+function getFilteredProducts() {
+  if (currentCategory === 'all') return products;
+  return products.filter(p => p.category === currentCategory);
+}
+
+function renderProducts() {
+  const container = document.getElementById('product-cards-container');
+  const filtered = getFilteredProducts();
+  const start = currentPage * PRODUCTS_PER_PAGE;
+  let pageProducts = filtered.slice(start, start + PRODUCTS_PER_PAGE);
+  if (pageProducts.length < PRODUCTS_PER_PAGE && filtered.length > 0) {
+    // Si no hay suficientes, repetir desde el inicio
+    pageProducts = pageProducts.concat(filtered.slice(0, PRODUCTS_PER_PAGE - pageProducts.length));
+  }
+  container.innerHTML = pageProducts.map(product => `
+    <div class="swiper-slide">
+      <div class="product-card product-card-img" data-id="${product.id}">
+        <div class="product-image">
+          <img src="${product.image}" alt="${product.name}" class="img-fluid" style="max-height:160px;object-fit:contain;width:100%;background:#f7f7f7;border-radius:1rem;">
+        </div>
+        <div class="product-info">
+          <h5>${product.name}</h5>
+          <p class="product-description">${product.description}</p>
+          <div class="product-price">
+            <span class="price">$${product.price.toFixed(2)}</span>
+            <span class="original-price">$${product.originalPrice.toFixed(2)}</span>
+          </div>
+          <div class="product-rating">
+            ${'<i class="fas fa-star text-warning"></i>'.repeat(Math.floor(product.rating))}
+            ${product.rating % 1 >= 0.5 ? '<i class="fas fa-star-half-alt text-warning"></i>' : ''}
+            <span>(${product.rating})</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+  if (typeof productSwiper !== 'undefined' && productSwiper.update) {
+    productSwiper.update();
+    productSwiper.slideTo(0);
+  }
+}
+
+function handleCategoryClick(e) {
+  const btn = e.target.closest('button[data-filter]');
+  if (!btn) return;
+  document.querySelectorAll('.filter-categories button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentCategory = btn.getAttribute('data-filter');
+  currentPage = 0;
+  renderProducts();
+}
+
+function handleNext() {
+  const filtered = getFilteredProducts();
+  if (filtered.length <= PRODUCTS_PER_PAGE) return;
+  currentPage = (currentPage + 1) % Math.ceil(filtered.length / PRODUCTS_PER_PAGE);
+  renderProducts();
+}
+
+function handlePrev() {
+  const filtered = getFilteredProducts();
+  if (filtered.length <= PRODUCTS_PER_PAGE) return;
+  currentPage = (currentPage - 1 + Math.ceil(filtered.length / PRODUCTS_PER_PAGE)) % Math.ceil(filtered.length / PRODUCTS_PER_PAGE);
+  renderProducts();
+}
+
+function handleProductClick(e) {
+  const card = e.target.closest('.product-card-img');
+  if (!card) return;
+  const id = card.getAttribute('data-id');
+  const product = products.find(p => p.id == id);
+  if (!product) return;
+  showProductModal(product);
+}
+
+function showProductModal(product) {
+  let modal = document.getElementById('product-modal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'product-modal';
+    modal.style.position = 'fixed';
+    modal.style.top = '0';
+    modal.style.left = '0';
+    modal.style.width = '100vw';
+    modal.style.height = '100vh';
+    modal.style.background = 'rgba(0,0,0,0.5)';
+    modal.style.display = 'flex';
+    modal.style.alignItems = 'center';
+    modal.style.justifyContent = 'center';
+    modal.style.zIndex = '9999';
+    document.body.appendChild(modal);
+  }
+  modal.innerHTML = `
+    <div style="background:#fff;padding:2rem 1.5rem;border-radius:1.2rem;max-width:400px;width:90%;position:relative;box-shadow:0 4px 24px rgba(0,0,0,0.12);">
+      <button id="close-product-modal" style="position:absolute;top:0.5rem;right:0.5rem;background:none;border:none;font-size:1.5rem;">&times;</button>
+      <img src="${product.image}" alt="${product.name}" style="width:100%;max-height:180px;object-fit:contain;background:#f7f7f7;border-radius:1rem;">
+      <h3 style="margin-top:1rem;">${product.name}</h3>
+      <p>${product.description}</p>
+      <div style="font-weight:bold;font-size:1.2rem;">$${product.price.toFixed(2)} <span style="text-decoration:line-through;color:#888;font-size:1rem;">$${product.originalPrice.toFixed(2)}</span></div>
+      <div style="margin-top:0.5rem;">Rating: ${product.rating} ⭐</div>
+    </div>
+  `;
+  modal.onclick = (e) => {
+    if (e.target === modal || e.target.id === 'close-product-modal') {
+      modal.remove();
+    }
+  };
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderProducts();
+  document.querySelector('.filter-categories').addEventListener('click', handleCategoryClick);
+  document.getElementById('product-next-btn').addEventListener('click', handleNext);
+  document.getElementById('product-prev-btn').addEventListener('click', handlePrev);
+  document.getElementById('product-cards-container').addEventListener('click', handleProductClick);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const sendIcon = document.getElementById('newsletter-send');
+  if (sendIcon) {
+    sendIcon.addEventListener('click', function() {
+      alert('¡Suscripción exitosa!');
+    });
+  }
 });

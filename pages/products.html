@@ -23,36 +23,37 @@
 
 <body class="light-mode">
     <div id="header-component"></div>
-    <!-- Categorías de productos -->
-    <section class="product-categories py-3 pt-5">
       <div class="container">
-        <ul class="nav nav-pills justify-content-center gap-2" id="category-filter">
-          <li class="nav-item">
-            <a class="nav-link active d-flex align-items-center gap-2" href="#" data-category="laptop">
-              <i class="fas fa-laptop"></i> Laptops
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="#" data-category="smartphone">
-              <i class="fas fa-mobile-alt"></i> Smartphones
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="#" data-category="pc">
-              <i class="fas fa-desktop"></i> PC
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="#" data-category="tablet">
-              <i class="fas fa-tablet-alt"></i> Tablets
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center gap-2" href="#" data-category="audifonos">
-              <i class="fas fa-headphones"></i> Audífonos
-            </a>
-          </li>
-        </ul>
+        <div class="filter-categories d-flex flex-wrap flex-md-nowrap gap-2 overflow-auto pb-2 justify-content-center" style="scrollbar-width: thin;">
+          <button class="btn btn-outline-primary active" data-filter="all">
+            <i class="fas fa-border-all"></i> All
+          </button>
+          <button class="btn btn-outline-primary" data-filter="laptops">
+            <i class="fas fa-laptop"></i> Laptops
+          </button>
+          <button class="btn btn-outline-primary" data-filter="desktops">
+            <i class="fas fa-desktop"></i> PCs
+          </button>
+          <button class="btn btn-outline-primary" data-filter="phones">
+            <i class="fas fa-mobile-alt"></i> Smartphones
+          </button>
+          <button class="btn btn-outline-primary" data-filter="tablets">
+            <i class="fas fa-tablet-alt"></i> Tablets
+          </button>
+          <button class="btn btn-outline-primary" data-filter="accessories">
+            <i class="fas fa-headphones"></i> Accessories
+          </button>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-center align-items-center gap-3 mt-3 filter-actions-bar">
+          <div class="filter-sort">
+            <select class="form-select">
+              <option>Most Recent</option>
+              <option>Lowest Price</option>
+              <option>Highest Price</option>
+              <option>Most Rated</option>
+            </select>
+          </div>
+        </div>
       </div>
     </section>
     <main class="container py-5 main-products">
@@ -131,7 +132,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal4" style="cursor:pointer;">
               <div class="product-image">
-                <img src="../assets/phone.jpg" alt="Smartphone" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
+                <img src="../assets/images/gaming laptop.jpg" alt="Smartphone" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
               </div>
               <div class="product-info">
                 <h5>Refurbished Smartphone</h5>
@@ -255,5 +256,6 @@
     <script src="../js/theme.js"></script>
     <script src="../js/components.js"></script>
     <script src="../main.js"></script>
+    <script src="../js/products.js"></script>
 </body>
 </html>
