@@ -734,6 +734,81 @@ body.dark-mode .hero-image {
     font-size: 1.25rem;
     color: var(--primary-color);
 }
+
+/* Contact Section Improvements */
+.contact-section {
+    background: linear-gradient(180deg, #f4f8fb 0%, #eaf6ff 100%);
+    border-radius: 32px;
+    margin-bottom: 2rem;
+}
+.contact-form-wrapper,
+.contact-info-wrapper {
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px 0 rgba(25, 118, 210, 0.07);
+    background: #fff;
+}
+.contact-info-wrapper {
+    background: #f8fafc;
+}
+.contact-info-card .info-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    background: #1976d2;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-info-card h5 {
+    font-weight: 600;
+    color: #232b39;
+}
+.contact-info-card p {
+    color: #4a5568;
+    margin-bottom: 0;
+}
+.social-links .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #eaf6ff;
+    color: #1976d2;
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    text-decoration: none;
+}
+.social-links .social-link:hover {
+    background: #1976d2;
+    color: #fff;
+    transform: translateY(-3px) scale(1.1);
+}
+
+@media (max-width: 991px) {
+    .contact-section {
+        border-radius: 16px;
+    }
+    .contact-form-wrapper,
+    .contact-info-wrapper {
+        border-radius: 1rem;
+    }
+}
+@media (max-width: 767px) {
+    .contact-section {
+        border-radius: 0;
+        padding: 1rem 0;
+    }
+    .contact-form-wrapper,
+    .contact-info-wrapper {
+        border-radius: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
 /* Product Slider */
 .product-slider {
     padding: 2rem 0;
@@ -1077,4 +1152,4 @@ body.dark-mode .hero-image {
 /* About Features */
 .about-features {
     text-align: left;
- } 
+ }
