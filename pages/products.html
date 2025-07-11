@@ -23,14 +23,57 @@
 
 <body class="light-mode">
     <div id="header-component"></div>
-    <main class="container py-5">
+    <!-- Banner principal de productos -->
+    <section class="products-banner py-5">
+      <div class="container text-center">
+        <span class="section-badge">Our Catalog</span>
+        <h2 class="section-title">Find Your Ideal Product</h2>
+        <p class="section-subtitle">Browse our wide selection of refurbished technology with warranty and quality certification.</p>
+      </div>
+    </section>
+    <!-- Filtros de productos -->
+    <section class="products-filter mb-5">
+      <div class="container">
+        <div class="filter-categories d-flex flex-wrap flex-md-nowrap gap-2 overflow-auto pb-2 justify-content-center" style="scrollbar-width: thin;">
+          <button class="btn btn-outline-primary active" data-filter="all">
+            <i class="fas fa-border-all"></i> All
+          </button>
+          <button class="btn btn-outline-primary" data-filter="laptops">
+            <i class="fas fa-laptop"></i> Laptops
+          </button>
+          <button class="btn btn-outline-primary" data-filter="desktops">
+            <i class="fas fa-desktop"></i> PCs
+          </button>
+          <button class="btn btn-outline-primary" data-filter="phones">
+            <i class="fas fa-mobile-alt"></i> Smartphones
+          </button>
+          <button class="btn btn-outline-primary" data-filter="tablets">
+            <i class="fas fa-tablet-alt"></i> Tablets
+          </button>
+          <button class="btn btn-outline-primary" data-filter="accessories">
+            <i class="fas fa-headphones"></i> Accessories
+          </button>
+        </div>
+        <div class="d-flex flex-row flex-wrap justify-content-center align-items-center gap-3 mt-3 filter-actions-bar">
+          <div class="filter-sort">
+            <select class="form-select">
+              <option>Most Recent</option>
+              <option>Lowest Price</option>
+              <option>Highest Price</option>
+              <option>Most Rated</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+    <main class="container py-5 main-products">
       <section class="products-section">
         <div class="row" id="products-list">
           <!-- Product Cards -->
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal1" style="cursor:pointer;">
               <div class="product-image">
-                <img src="../assets/laptop.jpg" alt="Laptop" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
+                <img src="../assets/images/laptop.avif" alt="Laptop" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
               </div>
               <div class="product-info">
                 <h5>Refurbished Gaming Laptop</h5>
@@ -53,7 +96,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal2" style="cursor:pointer;">
               <div class="product-image">
-                <img src="../assets/pc.jpg" alt="PC" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
+                <img src="../assets/images/pc.jpg" alt="PC" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
               </div>
               <div class="product-info">
                 <h5>Refurbished Gaming PC</h5>
@@ -76,7 +119,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal3" style="cursor:pointer;">
               <div class="product-image">
-                <img src="../assets/tablet.jpg" alt="Tablet" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
+                <img src="../assets/images/tablet.png" alt="Tablet" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
               </div>
               <div class="product-info">
                 <h5>Refurbished Pro Tablet</h5>
@@ -99,7 +142,7 @@
           <div class="col-md-6 col-lg-4 mb-4">
             <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal4" style="cursor:pointer;">
               <div class="product-image">
-                <img src="../assets/phone.jpg" alt="Smartphone" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
+                <img src="../assets/images/gaming laptop.jpg" alt="Smartphone" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
               </div>
               <div class="product-info">
                 <h5>Refurbished Smartphone</h5>
@@ -223,5 +266,6 @@
     <script src="../js/theme.js"></script>
     <script src="../js/components.js"></script>
     <script src="../main.js"></script>
+    <script src="../js/products.js"></script>
 </body>
 </html>
