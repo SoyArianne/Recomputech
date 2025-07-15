@@ -21,238 +21,123 @@
     <link rel="stylesheet" href="../styleProducts.css">
 </head>
 
-body class="light-mode">
+<body class="light-mode">
     <div id="header-component"></div>
-      <div class="container">
-        <div class="filter-categories d-flex flex-wrap flex-md-nowrap gap-2 overflow-auto pb-2 justify-content-center" style="scrollbar-width: thin;">
-          <button class="btn btn-outline-primary active" data-filter="all">
-            <i class="fas fa-border-all"></i> All
-          </button>
-          <button class="btn btn-outline-primary" data-filter="laptops">
-            <i class="fas fa-laptop"></i> Laptops
-          </button>
-          <button class="btn btn-outline-primary" data-filter="desktops">
-            <i class="fas fa-desktop"></i> PCs
-          </button>
-          <button class="btn btn-outline-primary" data-filter="phones">
-            <i class="fas fa-mobile-alt"></i> Smartphones
-          </button>
-          <button class="btn btn-outline-primary" data-filter="tablets">
-            <i class="fas fa-tablet-alt"></i> Tablets
-          </button>
-          <button class="btn btn-outline-primary" data-filter="accessories">
-            <i class="fas fa-headphones"></i> Accessories
-          </button>
+    <section class="hero-section col-md-20 mx-auto text-center py-5">
+        <div class="container">
+            <h1 class="mb-4">Explore Our Products</h1>
+            <div class="filter-categories d-flex flex-wrap flex-md-nowrap gap-2 overflow-auto pb-2 justify-content-center">
+                <button class="btn btn-outline-primary active" data-filter="all">
+                    <i class="fas fa-border-all"></i> All
+                </button>
+                <button class="btn btn-outline-primary" data-filter="laptops">
+                    <i class="fas fa-laptop"></i> Laptops
+                </button>
+                <button class="btn btn-outline-primary" data-filter="desktops">
+                    <i class="fas fa-desktop"></i> PCs
+                </button>
+                <button class="btn btn-outline-primary" data-filter="phones">
+                    <i class="fas fa-mobile-alt"></i> Smartphones
+                </button>
+                <button class="btn btn-outline-primary" data-filter="tablets">
+                    <i class="fas fa-tablet-alt"></i> Tablets
+                </button>
+                <button class="btn btn-outline-primary" data-filter="accessories">
+                    <i class="fas fa-headphones"></i> Accessories
+                </button>
+            </div>
+            <div class="d-flex flex-row flex-wrap justify-content-center align-items-center gap-3 mt-3 filter-actions-bar">
+                <div class="filter-sort">
+                    <select class="form-select">
+                        <option>Most Recent</option>
+                        <option>Lowest Price</option>
+                        <option>Highest Price</option>
+                        <option>Most Rated</option>
+                    </select>
+                </div>
+            </div>
         </div>
-        <div class="d-flex flex-row flex-wrap justify-content-center align-items-center gap-3 mt-3 filter-actions-bar">
-          <div class="filter-sort">
-            <select class="form-select">
-              <option>Most Recent</option>
-              <option>Lowest Price</option>
-              <option>Highest Price</option>
-              <option>Most Rated</option>
-            </select>
-          </div>
-        </div>
-      </div>
     </section>
     <main class="container py-5 main-products">
-      <section class="products-section">
-        <div class="row" id="products-list">
-          <!-- Product Cards -->
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal1" style="cursor:pointer;">
-              <div class="product-image">
-                <img src="../assets/images/laptop.avif" alt="Laptop" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
-              </div>
-              <div class="product-info">
-                <h5>Refurbished Gaming Laptop</h5>
-                <p class="product-description">High-end refurbished gaming laptop with warranty.</p>
-                <div class="product-price">
-                  <span class="price">$899.99</span>
-                  <span class="original-price">$1299.99</span>
+        <section class="products-section">
+            <div class="row" id="products-list">
+                <!-- Product Cards -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal1">
+                        <div class="product-image">
+                            <img src="../assets/images/laptop.avif" alt="Laptop" class="img-fluid">
+                        </div>
+                        <div class="product-info">
+                            <h5>Refurbished Gaming Laptop</h5>
+                            <p class="product-description">High-end refurbished gaming laptop with warranty.</p>
+                            <div class="product-price">
+                                <span class="price">$899.99</span>
+                                <span class="original-price">$1299.99</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <span>(4.8)</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-rating">
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <span>(4.8)</span>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal2">
+                        <div class="product-image">
+                            <img src="../assets/images/pc.jpg" alt="PC" class="img-fluid">
+                        </div>
+                        <div class="product-info">
+                            <h5>Refurbished Gaming PC</h5>
+                            <p class="product-description">High-performance gaming PC with premium components.</p>
+                            <div class="product-price">
+                                <span class="price">$1299.99</span>
+                                <span class="original-price">$1899.99</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                                <span>(4.5)</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal2" style="cursor:pointer;">
-              <div class="product-image">
-                <img src="../assets/images/pc.jpg" alt="PC" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
-              </div>
-              <div class="product-info">
-                <h5>Refurbished Gaming PC</h5>
-                <p class="product-description">High-performance gaming PC with premium components.</p>
-                <div class="product-price">
-                  <span class="price">$1299.99</span>
-                  <span class="original-price">$1899.99</span>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal3">
+                        <div class="product-image">
+                            <img src="../assets/images/tablet.png" alt="Tablet" class="img-fluid">
+                        </div>
+                        <div class="product-info">
+                            <h5>Refurbished Pro Tablet</h5>
+                            <p class="product-description">Professional tablet with high-resolution display.</p>
+                            <div class="product-price">
+                                <span class="price">$499.99</span>
+                                <span class="original-price">$799.99</span>
+                            </div>
+                            <div class="product-rating">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <span>(5.0)</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-rating">
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star-half-alt text-warning"></i>
-                  <span>(4.5)</span>
-                </div>
-              </div>
             </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal3" style="cursor:pointer;">
-              <div class="product-image">
-                <img src="../assets/images/tablet.png" alt="Tablet" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
-              </div>
-              <div class="product-info">
-                <h5>Refurbished Pro Tablet</h5>
-                <p class="product-description">Professional tablet with high-resolution display.</p>
-                <div class="product-price">
-                  <span class="price">$499.99</span>
-                  <span class="original-price">$799.99</span>
-                </div>
-                <div class="product-rating">
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <span>(5.0)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <div class="product-card h-100" data-bs-toggle="modal" data-bs-target="#productModal4" style="cursor:pointer;">
-              <div class="product-image">
-                <img src="../assets/images/gaming laptop.jpg" alt="Smartphone" class="img-fluid" style="max-height:180px;object-fit:contain;width:100%;background:#f3f4f6;">
-              </div>
-              <div class="product-info">
-                <h5>Refurbished Smartphone</h5>
-                <p class="product-description">Latest generation refurbished smartphone.</p>
-                <div class="product-price">
-                  <span class="price">$699.99</span>
-                  <span class="original-price">$999.99</span>
-                </div>
-                <div class="product-rating">
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <i class="fas fa-star text-warning"></i>
-                  <span>(5.0)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Modals for product details -->
-      <div class="modal fade" id="productModal1" tabindex="-1" aria-labelledby="productModal1Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="productModal1Label">Refurbished Gaming Laptop</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p><strong>Descripción completa:</strong></p>
-              <ul>
-                <li>Procesador Intel Core i7 de última generación</li>
-                <li>16GB RAM DDR4</li>
-                <li>SSD 512GB + HDD 1TB</li>
-                <li>Tarjeta gráfica NVIDIA GTX 1660Ti</li>
-                <li>Pantalla Full HD 15.6"</li>
-                <li>Garantía de 1 año</li>
-                <li>Windows 11 Pro instalado</li>
-              </ul>
-              <p>¡Ideal para gaming y trabajo profesional!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="productModal2" tabindex="-1" aria-labelledby="productModal2Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="productModal2Label">Refurbished Gaming PC</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p><strong>Descripción completa:</strong></p>
-              <ul>
-                <li>Procesador AMD Ryzen 7</li>
-                <li>32GB RAM DDR4</li>
-                <li>SSD NVMe 1TB</li>
-                <li>Tarjeta gráfica NVIDIA RTX 3060</li>
-                <li>Gabinete con RGB y refrigeración líquida</li>
-                <li>Garantía de 1 año</li>
-                <li>Windows 11 Pro instalado</li>
-              </ul>
-              <p>¡Potencia y rendimiento para gamers exigentes!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="productModal3" tabindex="-1" aria-labelledby="productModal3Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="productModal3Label">Refurbished Pro Tablet</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p><strong>Descripción completa:</strong></p>
-              <ul>
-                <li>Pantalla Retina 12.9"</li>
-                <li>Procesador Apple M1</li>
-                <li>8GB RAM</li>
-                <li>256GB almacenamiento</li>
-                <li>Compatible con Apple Pencil</li>
-                <li>Garantía de 1 año</li>
-                <li>iPadOS actualizado</li>
-              </ul>
-              <p>¡Perfecta para diseño, estudio y entretenimiento!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal fade" id="productModal4" tabindex="-1" aria-labelledby="productModal4Label" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="productModal4Label">Refurbished Smartphone</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p><strong>Descripción completa:</strong></p>
-              <ul>
-                <li>Pantalla AMOLED 6.5" FHD+</li>
-                <li>Procesador Snapdragon 888</li>
-                <li>8GB RAM</li>
-                <li>128GB almacenamiento</li>
-                <li>Cámara triple 64MP + 12MP + 8MP</li>
-                <li>Garantía de 1 año</li>
-                <li>Android 13 instalado</li>
-              </ul>
-              <p>¡Tecnología de última generación a precio accesible!</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        </section>
     </main>
     <div id="footer-component"></div>
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../js/theme.js"></script>
     <script src="../js/components.js"></script>
     <script src="../main.js"></script>
