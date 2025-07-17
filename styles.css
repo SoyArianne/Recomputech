@@ -78,12 +78,16 @@ img, video, iframe {
 
 /* Fix for hero section overflow */
 .hero-section {
-    position: relative;
-    padding-top: 40px;
-    background: linear-gradient(135deg, var(--bg-color) 0%, var(--bg-light) 100%);
-    overflow: hidden;
-    margin-bottom: 60px;
-    width: 100%;
+    /* Colores de la sección "Stay Informed" */
+    color: #333; /* Ajusta el color del texto si es necesario */
+    border-radius: 10px;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 
 .hero-image-container {
@@ -256,6 +260,25 @@ body.dark-mode .hero-overlay {
 
 body.dark-mode .hero-image {
     box-shadow: var(--shadow-md); /* Ajusta el sombreado para modo oscuro */
+}
+
+/* HERO SECTION DARK MODE: Mejora la visibilidad del texto */
+body.dark-mode .hero-section,
+[data-theme="dark"] .hero-section {
+  color: #fff !important;
+}
+body.dark-mode .hero-section h1,
+body.dark-mode .hero-section p,
+body.dark-mode .hero-section .lead,
+body.dark-mode .hero-section .badge,
+body.dark-mode .hero-section .display-4,
+body.dark-mode .hero-section .fw-bold {
+  color: #fff !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.25);
+}
+body.dark-mode .hero-section .badge.bg-primary {
+  background: #2563eb !important;
+  color: #fff !important;
 }
 
 /* Stats Section */
@@ -532,7 +555,6 @@ body.dark-mode .hero-image {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 0;
-    max-width: 300px;
 }
 
 @keyframes pulse {
@@ -845,6 +867,41 @@ body.dark-mode .hero-image {
     border-radius: 10px;
     box-shadow: var(--shadow-sm);
     color: var(--text-color);
+}
+
+/* Animación hover para los contact-info-card */
+.contact-info-card {
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+.contact-info-card:hover {
+    box-shadow: 0 8px 32px rgba(37,99,235,0.18);
+    transform: translateY(-6px) scale(1.04);
+    z-index: 2;
+}
+
+/* Animación y color para el icono al hacer hover */
+.contact-info-card:hover .info-icon {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: #fff;
+    transition: background 0.3s, color 0.3s, transform 0.3s;
+    transform: scale(1.15) rotate(-8deg);
+}
+
+/* Modo oscuro para contact-info-card y sus íconos */
+body.dark-mode .contact-info-card {
+    background: #232b39 !important; /* Gris azulado oscuro */
+    color: #fff !important;
+    box-shadow: 0 2px 12px 0 rgba(33,203,243,0.10);
+    border: none;
+}
+
+body.dark-mode .contact-info-card h5 {
+    color: #21cbf3 !important; /* Azul vibrante para títulos */
+    font-weight: 700;
+}
+
+body.dark-mode .contact-info-card p {
+    color: #fff !important; /* Texto blanco */
 }
 
 .info-icon {
@@ -1594,7 +1651,7 @@ main {
   align-items: center;
   background: #fff;
   border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgba(25,118,210,0.08);
+  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.06);
   padding: 1.2rem 1.5rem;
   margin-bottom: 1.2rem;
   gap: 1.2rem;
@@ -1610,7 +1667,7 @@ main {
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
-  box-shadow: 0 2px 8px rgba(25,118,210,0.10);
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
 }
 
 .contact-socials {
@@ -1630,7 +1687,7 @@ main {
   justify-content: center;
   font-size: 1.3rem;
   transition: background 0.2s, color 0.2s;
-  box-shadow: 0 2px 8px rgba(25,118,210,0.08);
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
 }
 
 .social-icon:hover {
@@ -1641,7 +1698,7 @@ main {
 .contact-form-wrapper {
   background: #fff;
   border-radius: 1.2rem;
-  box-shadow: 0 2px 12px rgba(25,118,210,0.08);
+  box-shadow: 0 2px 12px rgba(25, 118, 210, 0.08);
 }
 
 @media (max-width: 991px) {
@@ -1934,7 +1991,6 @@ main {
 .stats-section .stat-card:hover {
   transform: scale(1.07);
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-  z-index: 2;
 } 
 
 .product-img {
@@ -1946,4 +2002,270 @@ main {
     display: block;
     margin: 0 auto;
     padding: 10px;
-} 
+}
+
+/* Contact Section - Modern & Interactive */
+.contact-section {
+    background: linear-gradient(180deg, #f4f8fb 0%, #eaf6ff 100%);
+    border-radius: 32px;
+    margin-bottom: 2rem;
+    transition: background 0.3s;
+}
+body.dark-mode .contact-section {
+    background: linear-gradient(180deg, #181c24 0%, #232b39 100%);
+}
+
+.contact-form-wrapper {
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px 0 rgba(25, 118, 210, 0.07);
+    background: #fff;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+body.dark-mode .contact-form-wrapper {
+    background: var(--bg-light) !important;
+    color: #fff !important;
+    border: 2px solid transparent; /* Borde visible pero sin color */
+    box-shadow: 0 4px 24px 0 rgba(33,203,243,0.18);
+}
+
+body.dark-mode .contact-form-wrapper label,
+body.dark-mode .contact-form-wrapper .form-label {
+    color: #fff !important;
+}
+
+body.dark-mode .contact-form-wrapper .form-control,
+body.dark-mode .contact-form-wrapper textarea,
+body.dark-mode .contact-form-wrapper .form-select {
+    background: #232b39 !important; /* Gris azulado oscuro */
+    color: #fff !important;
+    border: 1.5px solid #21cbf3 !important;
+}
+
+body.dark-mode .contact-form-wrapper .form-control::placeholder,
+body.dark-mode .contact-form-wrapper textarea::placeholder {
+    color: #eaf6ff !important;
+    opacity: 1;
+}
+
+body.dark-mode .contact-form-wrapper .form-control:focus,
+body.dark-mode .contact-form-wrapper textarea:focus,
+body.dark-mode .contact-form-wrapper .form-select:focus {
+    border-color: #3b82f6 !important;
+    background: #181c24 !important;
+    color: #fff !important;
+    box-shadow: 0 0 0 2px #21cbf366;
+}
+
+body.dark-mode .contact-form-wrapper .btn {
+    background: #21cbf3 !important;
+    color: #111 !important;
+    border: none;
+}
+
+body.dark-mode .contact-form-wrapper .btn:hover {
+    background: #3b82f6 !important;
+    color: #fff !important;
+}
+
+/* Contact Info Cards */
+.contact-info-card {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px 0 rgba(25, 118, 210, 0.06);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+body.dark-mode .contact-info-card {
+    background: #232b39 !important; /* Gris azulado oscuro */
+    color: #fff !important;
+    box-shadow: 0 2px 12px 0 rgba(33,203,243,0.10);
+    border: none;
+}
+.contact-info-card .info-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    background: #eaf6ff;
+    color: #1976d2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    transition: background 0.3s, color 0.3s;
+}
+body.dark-mode .contact-info-card .info-icon {
+    background: #1976d2;
+    color: #fff;
+}
+.contact-info-card h5 {
+    font-weight: 600;
+    color: #232b39;
+    margin-bottom: 0.2rem;
+}
+body.dark-mode .contact-info-card h5 {
+    color: #21cbf3;
+}
+.contact-info-card p {
+    color: #4a5568;
+    margin-bottom: 0;
+}
+body.dark-mode .contact-info-card p {
+    color: #eaf6ff;
+}
+
+/* Social Icons */
+.contact-socials {
+    margin-top: 1rem;
+}
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #eaf6ff;
+    color: #1976d2;
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    text-decoration: none;
+    box-shadow: 0 2px 8px 0 rgba(25, 118, 210, 0.07);
+}
+.social-icon:hover {
+    background: #1976d2;
+    color: #fff;
+}
+body.dark-mode .social-icon {
+    background: #232b39;
+    color: #21cbf3;
+}
+body.dark-mode .social-icon:hover {
+    background: #21cbf3;
+    color: #232b39;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .contact-section {
+        border-radius: 16px;
+    }
+    .contact-form-wrapper,
+    .contact-info-card {
+        border-radius: 1rem;
+    }
+}
+@media (max-width: 767px) {
+    .contact-section {
+        border-radius: 0;
+        padding: 1rem 0;
+    }
+    .contact-form-wrapper,
+    .contact-info-card {
+        border-radius: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.contact-form-wrapper .btn,
+body.dark-mode .contact-form-wrapper .btn {
+    background: #2493a7 !important;
+    color: #fff !important;
+    border: none;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+}
+
+.contact-form-wrapper .btn:hover,
+body.dark-mode .contact-form-wrapper .btn:hover {
+    background: #1976d2 !important;
+    color: #fff !important;
+}
+
+/* Filtro de categorías y área blanca en modo oscuro */
+body.dark-mode .products-filter,
+body.dark-mode .filter-actions-bar {
+    background: #232b39 !important; /* Fondo igual al área principal */
+    color: #fff !important;
+    border: none !important;        /* Sin borde */
+    box-shadow: none !important;    /* Sin sombra */
+}
+
+body.dark-mode .filter-categories button,
+body.dark-mode .filter-actions .btn,
+body.dark-mode .filter-sort .form-select {
+    background: #232b39 !important;
+    color: #21cbf3 !important;
+    border-color: #21cbf3 !important;
+}
+
+body.dark-mode .filter-categories button.active,
+body.dark-mode .filter-categories button:focus,
+body.dark-mode .filter-categories button:hover,
+body.dark-mode .filter-actions .btn.active,
+body.dark-mode .filter-actions .btn:focus,
+body.dark-mode .filter-actions .btn:hover {
+    background: #21cbf3 !important;
+    color: #232b39 !important;
+    border-color: #21cbf3 !important;
+}
+
+/* Flecha visible en el select en modo oscuro */
+body.dark-mode .filter-sort .form-select {
+    background: #232b39 !important;
+    color: #21cbf3 !important;
+    border-color: #21cbf3 !important;
+    /* Forzar icono de flecha visible en select */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='cyan' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%2321cbf3' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+}
+
+/* Movimiento en botones al hacer hover */
+body.dark-mode .filter-categories button,
+body.dark-mode .filter-actions .btn {
+    transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s;
+}
+
+body.dark-mode .filter-categories button:hover,
+body.dark-mode .filter-actions .btn:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(33,203,243,0.13);
+}
+
+/* LOGIN Y REGISTER DARK MODE: Mejora la visibilidad del texto */
+body.dark-mode .auth-card,
+body.dark-mode .auth-header h1,
+body.dark-mode .auth-header p,
+body.dark-mode .auth-form label,
+body.dark-mode .auth-form .form-control,
+body.dark-mode .auth-form .input-group-text,
+body.dark-mode .auth-footer,
+body.dark-mode .social-btn {
+  color: #fff !important;
+}
+body.dark-mode .auth-card {
+  background: #232b39 !important;
+}
+body.dark-mode .auth-form .form-control {
+  background: #181f2a !important;
+  border-color: #374151 !important;
+}
+body.dark-mode .auth-form .input-group-text {
+  background: #232b39 !important;
+  border-color: #374151 !important;
+}
+body.dark-mode .auth-form .form-control::placeholder {
+  color: #b0b8c1 !important;
+}
+body.dark-mode .auth-footer a {
+  color: #3b82f6 !important;
+}
