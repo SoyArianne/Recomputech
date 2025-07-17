@@ -78,7 +78,7 @@ img, video, iframe {
 
 /* Fix for hero section overflow */
 .hero-section {
-    background: linear-gradient(135deg, #f4f8fb, #eaf6ff); /* Colores de la sección "Stay Informed" */
+    /* Colores de la sección "Stay Informed" */
     color: #333; /* Ajusta el color del texto si es necesario */
     border-radius: 10px;
     padding: 40px 20px;
@@ -260,6 +260,25 @@ body.dark-mode .hero-overlay {
 
 body.dark-mode .hero-image {
     box-shadow: var(--shadow-md); /* Ajusta el sombreado para modo oscuro */
+}
+
+/* HERO SECTION DARK MODE: Mejora la visibilidad del texto */
+body.dark-mode .hero-section,
+[data-theme="dark"] .hero-section {
+  color: #fff !important;
+}
+body.dark-mode .hero-section h1,
+body.dark-mode .hero-section p,
+body.dark-mode .hero-section .lead,
+body.dark-mode .hero-section .badge,
+body.dark-mode .hero-section .display-4,
+body.dark-mode .hero-section .fw-bold {
+  color: #fff !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.25);
+}
+body.dark-mode .hero-section .badge.bg-primary {
+  background: #2563eb !important;
+  color: #fff !important;
 }
 
 /* Stats Section */
@@ -2220,4 +2239,33 @@ body.dark-mode .filter-categories button:hover,
 body.dark-mode .filter-actions .btn:hover {
     transform: translateY(-3px) scale(1.04);
     box-shadow: 0 4px 16px rgba(33,203,243,0.13);
+}
+
+/* LOGIN Y REGISTER DARK MODE: Mejora la visibilidad del texto */
+body.dark-mode .auth-card,
+body.dark-mode .auth-header h1,
+body.dark-mode .auth-header p,
+body.dark-mode .auth-form label,
+body.dark-mode .auth-form .form-control,
+body.dark-mode .auth-form .input-group-text,
+body.dark-mode .auth-footer,
+body.dark-mode .social-btn {
+  color: #fff !important;
+}
+body.dark-mode .auth-card {
+  background: #232b39 !important;
+}
+body.dark-mode .auth-form .form-control {
+  background: #181f2a !important;
+  border-color: #374151 !important;
+}
+body.dark-mode .auth-form .input-group-text {
+  background: #232b39 !important;
+  border-color: #374151 !important;
+}
+body.dark-mode .auth-form .form-control::placeholder {
+  color: #b0b8c1 !important;
+}
+body.dark-mode .auth-footer a {
+  color: #3b82f6 !important;
 }
