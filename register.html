@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register - Recomputech</title>
+    <title>Register - Recomputech</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -17,7 +17,7 @@
 <body class="auth-body">
     <div class="auth-back">
         <a href="index.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Back to home
+            <i class="fas fa-arrow-left"></i> Back to Home
         </a>
     </div>
     
@@ -27,112 +27,57 @@
                 <div class="auth-logo d-flex align-items-center justify-content-center" style="background: transparent; box-shadow: none;">
                     <img src="assets/logo-recomputech.png" alt="Recomputech Logo" style="width: 70px; height: 70px; object-fit: contain; border-radius: 15px; background: transparent; padding: 0;">
                 </div>
-                <h1>Create an account</h1>
-                <p>Join the community of Recomputech</p>
+                <h1>Create Account</h1>
+                <p>Join the Recomputech community</p>
             </div>
             <div class="mb-4 text-center">
-                <label class="fw-semibold mb-2">Tipo de cuenta</label>
+                <label class="fw-semibold mb-2">Account type</label>
                 <div class="d-flex justify-content-center gap-3">
                     <input type="radio" class="btn-check" name="userType" id="regularUser" value="regular" checked autocomplete="off">
-                    <label class="btn btn-outline-primary" for="regularUser">Usuario Regular</label>
+                    <label class="btn btn-outline-primary" for="regularUser">Regular User</label>
                     <input type="radio" class="btn-check" name="userType" id="technicianUser" value="technician" autocomplete="off">
-                    <label class="btn btn-outline-primary" for="technicianUser">Técnico</label>
+                    <label class="btn btn-outline-primary" for="technicianUser">Technician</label>
                 </div>
             </div>
             <form class="auth-form" id="registerForm">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="firstName">Name</label>
-                            <div class="input-group">
-                                <span class="input-group-text">
-                                    <i class="fas fa-user"></i>
-                                </span>
-                                <input type="text" id="firstName" class="form-control" placeholder="You name" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="lastName">Last name</label>
-                            <div class="input-group">
-                                <span class="input-group-text">
-                                    <i class="fas fa-user"></i>
-                                </span>
-                                <input type="text" id="lastName" class="form-control" placeholder="You last name" required>
-
                 <div id="regular-fields">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="firstName">Nombre</label>
+                                <label for="firstName">First Name</label>
                                 <div class="input-group">
                                     <span class="input-group-text">
                                         <i class="fas fa-user"></i>
                                     </span>
-                                    <input type="text" id="firstName" class="form-control" placeholder="Tu nombre" required>
+                                    <input type="text" id="firstName" class="form-control" placeholder="Your first name" required>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="lastName">Apellido</label>
+                                <label for="lastName">Last Name</label>
                                 <div class="input-group">
                                     <span class="input-group-text">
                                         <i class="fas fa-user"></i>
                                     </span>
-                                    <input type="text" id="lastName" class="form-control" placeholder="Tu apellido" required>
+                                    <input type="text" id="lastName" class="form-control" placeholder="Your last name" required>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                <div class="form-group">
-                    <label for="email"> Your email address</label>
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fas fa-envelope"></i>
-                        </span>
-                        <input type="email" id="email" class="form-control" placeholder="you@email.com" required>
-
                     <div class="form-group">
-                        <label for="email">Correo electrónico</label>
+                        <label for="email">Email address</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="fas fa-envelope"></i>
                             </span>
-                            <input type="email" id="email" class="form-control" placeholder="tu@email.com" required>
+                            <input type="email" id="email" class="form-control" placeholder="you@email.com" required>
                         </div>
- 
                     </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fas fa-lock"></i>
-                        </span>
-                        <input type="password" id="password" class="form-control" placeholder="••••••••" required>
-                        <button type="button" class="btn btn-outline-secondary toggle-password">
-                            <i class="fas fa-eye"></i>
-                        </button>
-                    </div>
-                    <small class="password-hint">Minimum 8 characters, including uppercase, lowercase, and numbers</small>
-                </div>
-
-                <div class="form-group">
-                    <label for="confirmPassword">Confirm password</label>
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fas fa-lock"></i>
-                        </span>
-                        <input type="password" id="confirmPassword" class="form-control" placeholder="••••••••" required>
-                        <button type="button" class="btn btn-outline-secondary toggle-password">
-                            <i class="fas fa-eye"></i>
-                        </button>
 
                     <div class="form-group">
-                        <label for="password">Contraseña</label>
+                        <label for="password">Password</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="fas fa-lock"></i>
@@ -142,11 +87,11 @@
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
-                        <small class="password-hint">Mínimo 8 caracteres, incluyendo mayúsculas, minúsculas y números</small>
+                        <small class="password-hint">Minimum 8 characters, including uppercase, lowercase, and numbers</small>
                     </div>
 
                     <div class="form-group">
-                        <label for="confirmPassword">Confirmar Contraseña</label>
+                        <label for="confirmPassword">Confirm Password</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="fas fa-lock"></i>
@@ -158,34 +103,19 @@
                         </div>
                     </div>
 
-                <div class="form-check mb-3">
-                    <input type="checkbox" class="form-check-input" id="terms" required>
-                    <label class="form-check-label" for="terms">
-                        I accept the <a href="#">Terms and Conditions</a> and the <a href="#">Privacy Policy</a>
-                    </label>
-                </div>
-
-                <button type="submit" class="btn btn-primary w-100">
-                    Create an account
-                </button>
-
-                <div class="auth-divider">
-                    <span>Or register with</span>
-                </div>
-
                     <div class="form-check mb-3">
                         <input type="checkbox" class="form-check-input" id="terms" required>
                         <label class="form-check-label" for="terms">
-                            Acepto los <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a>
+                            I accept the <a href="#">Terms and Conditions</a> and the <a href="#">Privacy Policy</a>
                         </label>
                     </div>
 
                     <button type="submit" class="btn btn-primary w-100">
-                        Crear Cuenta
+                        Create Account
                     </button>
 
                     <div class="auth-divider">
-                        <span>O regístrate con</span>
+                        <span>Or register with</span>
                     </div>
 
                     <div class="social-buttons">
@@ -200,42 +130,38 @@
                     </div>
 
                     <p class="auth-footer">
-                        ¿Ya tienes una cuenta? <a href="login.html">Inicia Sesión</a>
+                        Already have an account? <a href="login.html">Sign in</a>
                     </p>
                 </div>
                 <div id="technician-fields" style="display:none;">
                     <div class="form-group">
-                        <label for="specialty">Especialidad</label>
+                        <label for="specialty">Specialty</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="fas fa-tools"></i>
                             </span>
-                            <input type="text" id="specialty" class="form-control" placeholder="Ej: Reparación de laptops, redes, etc.">
+                            <input type="text" id="specialty" class="form-control" placeholder="e.g. Laptop repair, networks, etc.">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="experience">Años de experiencia</label>
+                        <label for="experience">Years of experience</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="fas fa-briefcase"></i>
                             </span>
-                            <input type="number" id="experience" class="form-control" placeholder="Ej: 3" min="0">
+                            <input type="number" id="experience" class="form-control" placeholder="e.g. 3" min="0">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="certifications">Certificaciones (opcional)</label>
+                        <label for="certifications">Certifications (optional)</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 <i class="fas fa-certificate"></i>
                             </span>
-                            <input type="text" id="certifications" class="form-control" placeholder="Ej: CompTIA, Cisco, etc.">
+                            <input type="text" id="certifications" class="form-control" placeholder="e.g. CompTIA, Cisco, etc.">
                         </div>
                     </div>
                 </div>
-
-                <p class="auth-footer">
-                    Already have an account? <a href="login.html">Sign-in</a>
-                </p>
             </form>
         </div>
     </div>
@@ -244,7 +170,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="auth.js"></script>
     <script>
-        // Mostrar campos según tipo de usuario
+        // Show fields based on user type
         const regularFields = document.getElementById('regular-fields');
         const technicianFields = document.getElementById('technician-fields');
         document.getElementById('regularUser').addEventListener('change', function() {
@@ -260,5 +186,6 @@
             }
         });
     </script>
+    <script src="js/theme.js"></script>
 </body>
 </html> 
