@@ -69,9 +69,29 @@ window.themeManager = {
     setup: setupThemeToggle
 };
 
-// Inicializar tema cuando el DOM esté listo
+// Script para mantener el modo dark entre páginas usando localStorage
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Limpiar localStorage para forzar tema claro por defecto
-    localStorage.removeItem('theme');
-    initializeTheme();
+    // Aplica el tema guardado al cargar la página
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+
+    // Botón de cambio de tema (debe tener id="theme-toggle" en el header)
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.addEventListener('click', function() {
+            const isDark = !document.body.classList.contains('dark-mode');
+            if (isDark) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
 }); 
