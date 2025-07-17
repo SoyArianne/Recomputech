@@ -1,54 +1,56 @@
-<!-- Header -->
 <header class="fixed-top">
     <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <div class="brand-content">
-                    <div class="brand-icon">
-                        <i class="fas fa-recycle"></i>
-                    </div>
-                    <div class="brand-text">
-                        <span class="brand-name"> Recomputech</span>
-                        <span class="brand-tagline">Tecnología Sostenible</span>
-                    </div>
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#productos">Produc</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#tecnicos">Técnicos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#nosotros">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#servicios">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contacto">Contacto</a>
-                    </li>
-                </ul>
-                <div class="header-actions">
-                    <div class="search-box">
-                        <input type="text" class="form-control" placeholder="Buscar...">
-                        <button class="btn btn-icon">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                    <div class="header-buttons">
-                        <button class="btn btn-icon" id="theme-toggle" type="button" aria-label="Cambiar tema">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                        <a href="login.html" class="btn btn-primary">Iniciar Sesión</a>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        
+        <!-- IZQUIERDA: LOGO + TEXTO -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="/assets/logos/logo-.png" alt="Logo" class="logo m-2 logo-small">
+          <div class="d-flex flex-column ms-2">
+            <span class="fw-bold" id="brand-name" style="font-size: 1.25rem;">Recomputech</span>
+            <span class="text-muted" style="font-size: 0.85rem; margin-top: -4px;">Sustainable Technology</span>
+          </div>
+        </a>
+  
+        <!-- BOTÓN PARA MÓVIL -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- CENTRO: MENÚ DE NAVEGACIÓN -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item mx-3"><a class="nav-link" href="/index.html">Home</a></li>
+            <li class="nav-item mx-3"><a class="nav-link" href="pages/products.html">Products</a></li>
+            <li class="nav-item mx-3"><a class="nav-link" href="/pages/services.html">Services</a></li>
+            <li class="nav-item mx-3"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          </ul>
         </div>
+  
+        <!-- DERECHA: BUSCADOR + LOGIN -->
+        <div class="d-flex align-items-center">
+          <div class="search-box d-flex align-items-center me-2">
+            <input type="text" id="search-input" class="form-control form-control-sm" placeholder="Search...">
+            <button class="btn btn-icon btn-sm" id="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+          <button id="theme-toggle" class="btn btn-dark-mode">
+              <i class="fas fa-moon"></i>
+          </button>
+          <a href="/login.html" class="btn btn-outline-primary ms-3">Login</a>
+          <a href="/register.html" class="btn btn-primary ms-2">Register</a>
+        </div>
+  
+      </div>
     </nav>
-</header> 
+  </header>
+
+<script>
+  const brandName = document.getElementById('brand-name');
+  brandName.style.cursor = 'pointer';
+  brandName.addEventListener('click', function() {
+    this.classList.toggle('brand-clicked');
+  });
+</script>
+
+<script src="js/theme.js"></script>
