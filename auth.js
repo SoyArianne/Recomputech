@@ -27,33 +27,37 @@ document.addEventListener('DOMContentLoaded', function() {
             // Basic form validation
             const inputs = form.querySelectorAll('input[required]');
             let isValid = true;
+            let emailValue = '';
 
             inputs.forEach(input => {
                 if (!input.value.trim()) {
                     isValid = false;
-                    showError(input, 'Este campo es requerido');
+                    showError(input, 'This field is required');
                 } else {
                     removeError(input);
                     
                     // Email validation
-                    if (input.type === 'email' && !isValidEmail(input.value)) {
-                        isValid = false;
-                        showError(input, 'Email inválido');
+                    if (input.type === 'email') {
+                        emailValue = input.value.trim();
+                        if (!isValidEmail(input.value)) {
+                            isValid = false;
+                            showError(input, 'Invalid email');
+                        }
                     }
                     
                     // Password validation for register form
                     if (input.type === 'password' && form.id === 'registerForm') {
                         if (!isValidPassword(input.value)) {
                             isValid = false;
-                            showError(input, 'La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número');
+                            showError(input, 'Password must be at least 8 characters, one uppercase, one lowercase and one number');
                         }
                         
                         // Confirm password validation
-                        if (input.id === 'confirmPassword') {
-                            const password = form.querySelector('#password').value;
+                        if (input.id === 'confirmPassword' || input.id === 'techConfirmPassword') {
+                            const password = form.querySelector('#password') ? form.querySelector('#password').value : form.querySelector('#techPassword').value;
                             if (input.value !== password) {
                                 isValid = false;
-                                showError(input, 'Las contraseñas no coinciden');
+                                showError(input, 'Passwords do not match');
                             }
                         }
                     }
@@ -61,30 +65,47 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (isValid) {
-                // Here you would typically send the form data to your backend
-                console.log('Form is valid, submitting...');
-                const formData = new FormData(form);
-                const data = Object.fromEntries(formData);
-                console.log('Form data:', data);
-                
                 // Simulate form submission
                 const submitButton = form.querySelector('button[type="submit"]');
                 const originalText = submitButton.innerHTML;
                 submitButton.disabled = true;
-                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando...';
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
                 
                 setTimeout(() => {
-                    submitButton.innerHTML = '<i class="fas fa-check"></i> ¡Éxito!';
+                    submitButton.innerHTML = '<i class="fas fa-check"></i> Success!';
                     setTimeout(() => {
                         submitButton.disabled = false;
                         submitButton.innerHTML = originalText;
-                        // Redirect based on form type
+                        // Redirection logic
                         if (form.id === 'loginForm') {
-                            window.location.href = 'index.html';
+                            // Detect user type for login
+                            let userType = localStorage.getItem('userType');
+                            if (!userType) userType = 'regular'; // fallback
+                            if (userType === 'technician') {
+                                window.location.href = 'dashboard-technician.html';
+                            } else {
+                                window.location.href = 'dashboard-user.html';
+                            }
                         } else if (form.id === 'registerForm') {
-                            window.location.href = 'login.html';
+                            // Simulate: if email already exists, redirect to login
+                            // For demo, if email is 'test@exists.com', simulate existing user
+                            if (emailValue === 'test@exists.com') {
+                                window.location.href = 'login.html';
+                                return;
+                            }
+                            // Detect user type for register
+                            let userType = 'regular';
+                            if (document.getElementById('technicianUser') && document.getElementById('technicianUser').checked) {
+                                userType = 'technician';
+                            }
+                            localStorage.setItem('userType', userType);
+                            if (userType === 'technician') {
+                                window.location.href = 'dashboard-technician.html';
+                            } else {
+                                window.location.href = 'dashboard-user.html';
+                            }
                         } else if (form.id === 'forgotPasswordForm') {
-                            showSuccess(form, 'Se han enviado las instrucciones a tu correo');
+                            showSuccess(form, 'Instructions have been sent to your email');
                         }
                     }, 1000);
                 }, 2000);
