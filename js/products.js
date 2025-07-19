@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
           match = name.includes('laptop');
           break;
         case 'desktops':
-          match = name.includes('pc');
+          match = name.includes('pc') || name.includes('dell') || name.includes('hp') || name.includes('lenovo') || name.includes('mac');
           break;
         case 'phones':
           match = name.includes('phone') || name.includes('smartphone');
