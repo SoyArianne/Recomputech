@@ -249,6 +249,38 @@ body {
     transform: translateY(-10px);
 }
 /* Dark Mode for Hero Section */
+body.dark-mode .about-hero,
+[data-theme="dark"] .about-hero {
+  background: linear-gradient(90deg, #232b39 0%, #1f2937 100%) !important;
+  color: #fff !important;
+}
+.about-hero .display-4,
+.about-hero .fw-bold {
+  color: var(--primary-color);
+}
+body.dark-mode .about-hero .display-4,
+body.dark-mode .about-hero .fw-bold {
+  color: #fff !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.25);
+}
+body.dark-mode .about-hero h1,
+body.dark-mode .about-hero p,
+body.dark-mode .about-hero .lead,
+body-dark-mode .about-hero .btn,
+body.dark-mode .about-hero h4 {
+  color: #fff !important;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.25);
+}
+body.dark-mode .about-hero a.btn-primary {
+  background: #2563eb !important;
+  color: #fff !important;
+  border: none;
+}
+body.dark-mode .about-hero a.btn-primary:hover {
+  background: #3b82f6 !important;
+  color: #fff !important;
+}
+
 body.dark-mode .hero-section {
     background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-color) 100%);
 }
@@ -362,9 +394,19 @@ body.dark-mode .hero-section .badge.bg-primary {
 .section-title {
     font-size: 2.7rem;
     font-weight: 800;
-    color: var(--text-color);
+    color: var(--primary-color);
     margin-bottom: 1rem;
     letter-spacing: -1px;
+}
+.about-team .section-title,
+.about-team h4.fw-bold {
+    color: var(--primary-color);
+}
+body.dark-mode .about-team .section-title,
+body.dark-mode .about-team h4.fw-bold,
+[data-theme="dark"] .about-team .section-title,
+[data-theme="dark"] .about-team h4.fw-bold {
+    color: #fff !important;
 }
 
 .section-subtitle {
