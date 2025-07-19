@@ -1,0 +1,292 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg, #181f2a);
+  color: var(--text, #fff);
+  transition: background 0.3s, color 0.3s;
+}
+:root {
+  --bg: #181f2a;
+  --sidebar: #232b39;
+  --primary: #3b82f6;
+  --text: #fff;
+  --card: #232b39;
+  --footer: #232b39;
+}
+body.light-mode {
+  --bg: #f4f6fa;
+  --sidebar: #fff;
+  --primary: #3b82f6;
+  --text: #232b39;
+  --card: #fff;
+  --footer: #e9ecef;
+}
+.header {
+  background: var(--sidebar);
+  color: var(--text);
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem; /* Reducido para hacerlo más delgado */
+  min-height: 70px; /* Altura mínima más baja */
+  height: 70px; /* Altura fija más delgada */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+/* Elimino .header-container y sus media queries */
+/* Ajusto los hijos para que no se desborden */
+.header .logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+.header .logo span {
+  font-size: 1.1rem;
+}
+.header .actions {
+  display: flex; /* Asegura que los elementos estén en línea */
+  align-items: center; /* Centra verticalmente los elementos */
+  gap: 1rem; /* Espaciado entre los elementos */
+}
+.header .user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: row; /* Asegura que los elementos estén en una fila */
+}
+.header .user-info img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary);
+}
+.sidebar {
+  background: var(--sidebar);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem 1rem 1rem 1rem;
+  transition: width 0.3s;
+  width: 240px;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  z-index: 1040;
+  overflow-x: hidden;
+}
+.sidebar.collapsed {
+  width: 80px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.sidebar .nav-link {
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  white-space: nowrap;
+}
+.sidebar .nav-link.active, .sidebar .nav-link:hover {
+  background: var(--primary);
+  color: #fff;
+}
+.sidebar .sidebar-toggle {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  margin-left: 0.2rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.main-content {
+  margin-left: 240px;
+  padding: 2rem 2rem 0 2rem;
+  transition: margin-left 0.3s;
+  min-height: 90vh;
+}
+/* Sidebar colapsado: solo íconos visibles */
+.sidebar.collapsed {
+  width: 60px; /* o el ancho que prefieras para solo íconos */
+  transition: width 0.3s;
+}
+.sidebar.collapsed .sidebar-text {
+  display: none;
+}
+.sidebar.collapsed .sidebar-toggle i {
+  transform: rotate(180deg);
+}
+.main-content {
+  transition: margin-left 0.3s;
+}
+.sidebar.collapsed ~ .main-content {
+  margin-left: 60px; /* igual al ancho del sidebar colapsado */
+}
+.card {
+  background: var(--card);
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+.profile-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+}
+.footer {
+  background: var(--footer);
+  color: var(--text);
+  padding: 1.5rem 0;
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #3b82f6;
+}
+.footer a {
+  color: var(--primary);
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+.footer .socials i {
+  font-size: 1.2rem;
+  margin: 0 0.3rem;
+  color: var(--primary);
+}
+/* Animaciones */
+.sidebar, .main-content, .card, .header, .footer {
+  transition: all 0.3s;
+}
+/* Responsive */
+@media (max-width: 991px) {
+  .sidebar {
+    position: fixed;
+    left: -240px;
+    top: 64px;
+    height: calc(100vh - 64px);
+    z-index: 1050;
+    width: 240px;
+    transition: left 0.3s;
+  }
+  .sidebar.open {
+    left: 0;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  .sidebar.collapsed ~ .main-content {
+    margin-left: 0;
+  }
+}
+
+/* Sidebar general */
+.sidebar {
+  /* ...tus estilos existentes... */
+}
+
+/* Sidebar colapsado: solo íconos visibles, más grandes y botones más gruesos */
+.sidebar.collapsed .nav-link {
+  justify-content: center;
+  padding: 1.2rem 0; /* Más alto y más grueso */
+}
+
+.sidebar .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  transition: background 0.2s, color 0.2s, font-size 0.2s;
+}
+
+.sidebar .nav-link i {
+  font-size: 1.5rem; /* Íconos más grandes */
+  min-width: 32px;
+  text-align: center;
+}
+
+.sidebar.collapsed .nav-link i {
+  font-size: 2rem; /* Íconos aún más grandes en colapsado */
+}
+
+.sidebar .nav-link.active,
+.sidebar .nav-link[data-section="overview"] {
+  background: #e0e7ff;
+  color: #1d4ed8;
+  font-weight: bold;
+  border-left: 4px solid #6366f1;
+}
+
+.sidebar.collapsed .nav-link.active,
+.sidebar.collapsed .nav-link[data-section="overview"] {
+  border-left: 4px solid #6366f1;
+  background: #e0e7ff;
+}
+
+/* Perfil moderno */
+.profile-modern {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem;
+}
+.profile-photo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e5e7eb;
+  background: #f3f4f6;
+  margin-bottom: 0.5rem;
+}
+#changePhotoBtn {
+  margin-top: 0.5rem;
+}
+.profile-modern hr {
+  margin: 1.5rem 0;
+}
+.profile-modern label.form-label {
+  font-weight: 500;
+}
+.profile-modern input[type="text"],
+.profile-modern input[type="email"],
+.profile-modern input[type="tel"],
+.profile-modern input[type="password"] {
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.profile-modern .form-check-label {
+  margin-left: 0.5rem;
+}
+.profile-modern .btn {
+  min-width: 140px;
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .profile-modern {
+    padding: 1.2rem 0.5rem;
+  }
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+  }
+}
