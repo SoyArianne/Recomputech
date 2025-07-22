@@ -225,8 +225,15 @@ document.addEventListener('DOMContentLoaded', async function() {
         if (user) {
             showNotification(`Welcome back, ${user.name}!`, 'success');
             setTimeout(() => {
-                // Redirect to home page
-                window.location.href = '../index.html';
+                // Redirect based on user role
+                if (user.role === 'technician') {
+                    window.location.href = '../dashboard/Technician/dashboard-technician.html';
+                } else if (user.role === 'admin') {
+                    window.location.href = '../dashboard/Admin/dashboard-admin.html';
+                } else {
+                    // Regular user - redirect to home page
+                    window.location.href = '../index.html';
+                }
             }, 1500);
         } else {
             showNotification('Invalid email or password', 'error');
